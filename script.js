@@ -1,8 +1,8 @@
-const wrapper = document.querySelector(".wrapper");
-const qrInput = wrapper.querySelector(".form input");
-const generateBtn = wrapper.querySelector(".form button");
-const qrImg = wrapper.querySelector(".qr-code img");
-const downloadLink = wrapper.querySelector(".download-link");
+const wrapper = document.querySelector(".wrapper"),
+  qrInput = wrapper.querySelector(".form input"),
+  generateBtn = wrapper.querySelector(".form button"),
+  qrImg = wrapper.querySelector(".qr-code img");
+
 let preValue;
 
 generateBtn.addEventListener("click", () => {
@@ -14,10 +14,15 @@ generateBtn.addEventListener("click", () => {
   qrImg.addEventListener("load", () => {
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
-    
-    // Update the download link attributes when the QR code image loads
-    downloadLink.href = qrImg.src;
-    downloadLink.style.display = "inline-block"; // Display the download link
+
+    // Inform the user to right-click and save the image
+    alert("To save the QR code, right-click on the image and choose 'Save Image As...'");
+
+    // Remove any previous download link
+    const downloadLink = wrapper.querySelector("a");
+    if (downloadLink) {
+      wrapper.removeChild(downloadLink);
+    }
   });
 });
 
@@ -25,6 +30,5 @@ qrInput.addEventListener("keyup", () => {
   if (!qrInput.value.trim()) {
     wrapper.classList.remove("active");
     preValue = "";
-    downloadLink.style.display = "none"; // Hide the download link if input is empty
   }
 });
