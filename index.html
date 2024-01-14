@@ -3,24 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>QR Code Generator</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>QR Code Generator</h1>
-      <p>Paste a URL or enter text to create a QR code</p>
-    </header>
-    <div class="form">
-      <input type="text" spellcheck="false" placeholder="Enter text or URL">
-      <button>Generate QR Code</button>
-    </div>
-    <div class="qr-code">
-      <img src="" alt="QR code">
-    </div>
-    <a class="download-link" style="display: none;" download="qrcode.png">Download QR Code</a>
+<div class="wrapper">
+  <header>
+    <h1>QR Code Generator</h1>
+    <p>Paste a URL or enter text to create QR code</p>
+  </header>
+  <div class="form">
+    <input type="text" spellcheck="false" placeholder="Enter text or URL">
+    <button>Generate QR Code</button>
   </div>
-
-  <script src="script.js"></script>
+  <div class="qr-code">
+    <img src="" alt="qr-code">
+  </div>
+</div>
+<script src="./script.js"></script>
 </body>
 </html>
